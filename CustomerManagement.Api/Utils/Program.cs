@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace CustomerManagement.Api
+namespace CustomerManagement.Api.Utils
 {
     public class Program
     {

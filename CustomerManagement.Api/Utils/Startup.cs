@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace CustomerManagement.Api
+namespace CustomerManagement.Api.Utils
 {
     public class Startup
     {
@@ -46,6 +46,7 @@ namespace CustomerManagement.Api
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }
