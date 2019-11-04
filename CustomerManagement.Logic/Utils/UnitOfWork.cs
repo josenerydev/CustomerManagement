@@ -15,9 +15,9 @@ namespace CustomerManagement.Logic.Utils
         private bool _isAlive = true;
         private bool _isCommitted;
 
-        public UnitOfWork()
+        public UnitOfWork(SessionFactory sessionFactory)
         {
-            session = SessionFactory.OpenSession();
+            session = sessionFactory.OpenSession();
             transaction = session.BeginTransaction(IsolationLevel.ReadCommitted);
         }
 

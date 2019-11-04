@@ -12,19 +12,20 @@ using System.Reflection;
 
 namespace CustomerManagement.Logic.Utils
 {
-    public static class SessionFactory
+    public  class SessionFactory
     {
-        private static ISessionFactory factory;
+        private readonly ISessionFactory factory;
 
-        internal static ISession OpenSession()
-        {
-            return factory.OpenSession();
-        }
-
-        public static void Init(string connectionString)
+        public SessionFactory(string connectionString)
         {
             factory = BuildSessionFactory(connectionString);
         }
+
+        internal  ISession OpenSession()
+        {
+            return factory.OpenSession();
+        }
+        
 
         public static ISessionFactory BuildSessionFactory(string connectionString)
         {
