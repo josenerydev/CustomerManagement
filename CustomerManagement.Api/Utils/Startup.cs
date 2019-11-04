@@ -33,6 +33,7 @@ namespace CustomerManagement.Api.Utils
             services.AddScoped<UnitOfWork>();
             services.AddTransient<CustomerRepository>();
             services.AddTransient<IndustryRepository>();
+            services.AddTransient<IEmailGateway, EmailGateway>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
