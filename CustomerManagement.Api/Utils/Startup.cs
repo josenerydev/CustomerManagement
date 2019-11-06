@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CustomerManagement.Logic.Model;
+using CustomerManagement.Logic.SeedWork;
 using CustomerManagement.Logic.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,6 +31,7 @@ namespace CustomerManagement.Api.Utils
             services.AddControllers();
 
             services.AddSingleton(new SessionFactory(Configuration["ConnectionString"]));
+            services.AddSingleton(new DomainEvents());
             services.AddScoped<UnitOfWork>();
             services.AddTransient<CustomerRepository>();
             services.AddTransient<IndustryRepository>();

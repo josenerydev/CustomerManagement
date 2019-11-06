@@ -5,11 +5,11 @@ using System.Reflection;
 
 namespace CustomerManagement.Logic.SeedWork
 {
-    public static class DomainEvents
+    public class DomainEvents
     {
         private static List<Type> _handlers;
 
-        public static void Init()
+        public DomainEvents()
         {
             _handlers = Assembly.GetExecutingAssembly()
                 .GetTypes()
