@@ -59,15 +59,15 @@ namespace CustomerManagement.Api.Customers
 
             Customer customer = customerOrNothing.Value;
 
-            var dto = new
+            var dto = new CustomerDetailsDto
             {
-                customer.Id,
+               Id = customer.Id,
                 Name = customer.Name.Value,
                 PrimaryEmail = customer.PrimaryEmail.Value,
                 SecondaryEmail = customer.SecondaryEmail.HasValue ? customer.SecondaryEmail.Value : null,
                 Industry = customer.EmailingSettings.Industry.Name,
-                customer.EmailingSettings.EmailCampaign,
-                customer.Status
+                EmailCampaign = customer.EmailingSettings.EmailCampaign.ToString(),
+                Status = customer.Status.ToString()
             };
 
             return Ok(dto);
