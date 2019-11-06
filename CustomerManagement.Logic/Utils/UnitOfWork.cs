@@ -55,14 +55,14 @@ namespace CustomerManagement.Logic.Utils
             return session.Get<T>(id);
         }
 
-        internal void SaveOrUpdate<T>(T entity)
+        internal void SaveOrUpdate<T>(T aggregateRoot)
         {
-            session.SaveOrUpdate(entity);
+            session.SaveOrUpdate(aggregateRoot);
         }
 
-        internal void Delete<T>(T entity)
+        internal void Delete<T>(T aggregateRoot)
         {
-            session.Delete(entity);
+            session.Delete(aggregateRoot);
         }
 
         internal IQueryable<T> Query<T>()

@@ -4,7 +4,7 @@ using CustomerManagement.Logic.SeedWork;
 
 namespace CustomerManagement.Logic.Model
 {
-    public class Industry : Entity
+    public class Industry : AggregateRoot
     {
         public static readonly Industry Cars = new Industry(1, nameof(Cars));
         public static readonly Industry Pharmacy = new Industry(2, nameof(Pharmacy));

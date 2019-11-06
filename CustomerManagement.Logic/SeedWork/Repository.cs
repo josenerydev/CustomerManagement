@@ -5,7 +5,7 @@ using CustomerManagement.Logic.Utils;
 namespace CustomerManagement.Logic.SeedWork
 {
     public class Repository<T>
-        where T : Entity
+        where T : AggregateRoot
     {
         protected readonly UnitOfWork unitOfWork;
 
@@ -19,9 +19,9 @@ namespace CustomerManagement.Logic.SeedWork
             return unitOfWork.Get<T>(id);
         }
 
-        public void Save(T entity)
+        public void Save(T aggregateRoot)
         {
-            unitOfWork.SaveOrUpdate(entity);
+            unitOfWork.SaveOrUpdate(aggregateRoot);
         }
     }
 }

@@ -1,12 +1,12 @@
 ﻿using CSharpFunctionalExtensions;
+
 using CustomerManagement.Logic.SeedWork;
+
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CustomerManagement.Logic.Model
 {
-    public class Customer : Entity
+    public class Customer : AggregateRoot
     {
         private readonly string _name;
         public virtual CustomerName Name => (CustomerName)_name;
