@@ -1,16 +1,14 @@
 ﻿using CSharpFunctionalExtensions;
+
 using CustomerManagement.Logic.SeedWork;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CustomerManagement.Logic.Model
 {
     public class Industry : Entity
     {
-        public static readonly Industry Cars = new Industry(1, "Cars");
-        public static readonly Industry Pharmacy = new Industry(2, "Pharmacy");
-        public static readonly Industry Other = new Industry(3, "Other");
+        public static readonly Industry Cars = new Industry(1, nameof(Cars));
+        public static readonly Industry Pharmacy = new Industry(2, nameof(Pharmacy));
+        public static readonly Industry Other = new Industry(3, nameof(Other));
 
         public virtual string Name { get; protected set; }
 
