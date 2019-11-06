@@ -2,7 +2,7 @@
 
 using CustomerManagement.Logic.Utils;
 
-namespace CustomerManagement.Logic.Common
+namespace CustomerManagement.Logic.SeedWork
 {
     public class Repository<T>
         where T : Entity

@@ -1,4 +1,4 @@
-﻿namespace CustomerManagement.Logic.Common
+﻿namespace CustomerManagement.Logic.SeedWork
 {
     public abstract class Entity
     {

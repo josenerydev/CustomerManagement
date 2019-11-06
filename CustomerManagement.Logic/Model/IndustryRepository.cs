@@ -1,6 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 
-using CustomerManagement.Logic.Common;
+using CustomerManagement.Logic.SeedWork;
 using CustomerManagement.Logic.Utils;
 
 using System.Linq;
