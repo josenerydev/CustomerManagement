@@ -1,4 +1,5 @@
-﻿using CustomerManagement.Logic.SeedWork;
+﻿using CustomerManagement.Logic.SecretariaContext.AggregatesModel.Common;
+using CustomerManagement.Logic.SeedWork;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,10 +9,10 @@ namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggreg
     public class Aluno : AggregateRoot
     {
         public string Foto { get; set; }
-        public string Nome { get; set; }
+        public Nome Nome { get; set; }
         public int Codigo { get; set; }
-        public string Cep { get; set; }
-        public string Cidade { get; set; }
+        public Cep Cep { get; set; }
+        public Cidade Cidade { get; set; }
         public string UF { get; set; }
         public string Logradouro { get; set; }
         public string Bairro { get; set; }
