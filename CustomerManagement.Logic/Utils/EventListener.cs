@@ -61,7 +61,7 @@ namespace CustomerManagement.Logic.Utils
 
             foreach (IRequest domainEvent in aggregateRoot.DomainEvents)
             {
-                DomainEvents.Dispatch(domainEvent);
+                //DomainEvents.Dispatch(domainEvent);
             }
 
             aggregateRoot.ClearEvents();
