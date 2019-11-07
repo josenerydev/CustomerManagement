@@ -26,11 +26,12 @@ namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggreg
         public string RG { get; set; }
 
         public string Sexo { get; set; }
+        // Masculino, Feminino, Outros
 
         public string EstadoCivil { get; set; }
         // Casado, Divorciado, Solteiro
 
-        public string DataNascimento { get; set; }
+        public DataNascimento DataNascimento { get; set; }
 
         public string NaturalDe { get; set; }
         public string Nacionalidade { get; set; }
@@ -38,6 +39,7 @@ namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggreg
         public string Carreira { get; set; }
         public string Email { get; set; }
         public string LinguaEstrangeira { get; set; }
+        // Inglês e Espanhou
 
         public string ColegioAnterior { get; set; }
         // Nome; Cidade; UF
