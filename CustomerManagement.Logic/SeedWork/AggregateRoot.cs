@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using MediatR;
+using System.Collections.Generic;
 
 namespace CustomerManagement.Logic.SeedWork
 {
     public abstract class AggregateRoot : Entity
     {
-        private readonly List<IDomainEvent> _domainEvents = new List<IDomainEvent>();
-        public virtual IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents;
+        private readonly List<IRequest> _domainEvents = new List<IRequest>();
+        public virtual IReadOnlyList<IRequest> DomainEvents => _domainEvents;
 
-        protected virtual void AddDomainEvent(IDomainEvent newEvent)
+        protected virtual void AddDomainEvent(IRequest newEvent)
         {
             _domainEvents.Add(newEvent);
         }

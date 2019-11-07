@@ -1,5 +1,5 @@
 ﻿using CustomerManagement.Logic.SeedWork;
-
+using MediatR;
 using NHibernate.Event;
 
 using System;
@@ -59,7 +59,7 @@ namespace CustomerManagement.Logic.Utils
             if (aggregateRoot == null)
                 return;
 
-            foreach (IDomainEvent domainEvent in aggregateRoot.DomainEvents)
+            foreach (IRequest domainEvent in aggregateRoot.DomainEvents)
             {
                 DomainEvents.Dispatch(domainEvent);
             }

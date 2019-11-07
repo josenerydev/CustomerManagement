@@ -61,7 +61,7 @@ namespace CustomerManagement.Api.Customers
 
             var dto = new CustomerDetailsDto
             {
-               Id = customer.Id,
+                Id = customer.Id,
                 Name = customer.Name.Value,
                 PrimaryEmail = customer.PrimaryEmail.Value,
                 SecondaryEmail = customer.SecondaryEmail.HasValue ? customer.SecondaryEmail.Value : null,

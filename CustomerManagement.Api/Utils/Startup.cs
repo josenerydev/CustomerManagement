@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using CustomerManagement.Logic.Model;
 using CustomerManagement.Logic.SeedWork;
 using CustomerManagement.Logic.Utils;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,9 +31,9 @@ namespace CustomerManagement.Api.Utils
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddMediatR(Assembly.GetExecutingAssembly());
 
             services.AddSingleton(new SessionFactory(Configuration["ConnectionString"]));
-            services.AddSingleton(new DomainEvents());
             services.AddScoped<UnitOfWork>();
             services.AddTransient<CustomerRepository>();
             services.AddTransient<IndustryRepository>();

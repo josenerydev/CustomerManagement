@@ -36,6 +36,8 @@ namespace CustomerManagement.Logic.Model
             SecondaryEmail = secondaryEmail;
             EmailingSettings = new EmailingSettings(industry, false);
             Status = CustomerStatus.Regular;
+
+            AddDomainEvent(new NameIndustryChangedEvent("Evento de dominio!"));
         }
 
         public virtual void DisableEmailing()
