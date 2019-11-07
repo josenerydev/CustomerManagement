@@ -26,6 +26,16 @@ namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.Common
                 .Map(dataNascimento => new DataNascimento(dataNascimento));
         }
 
+        public static explicit operator DataNascimento(string dataNascimento)
+        {
+            return Create(dataNascimento).Value;
+        }
+
+        public static implicit operator string(DataNascimento dataNascimento)
+        {
+            return dataNascimento.Value;
+        }
+
         protected override IEnumerable<object> GetEqualityComponents()
         {
             yield return Value;
