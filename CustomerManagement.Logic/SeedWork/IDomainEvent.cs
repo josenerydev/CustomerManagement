@@ -1,6 +1,8 @@
-﻿namespace CustomerManagement.Logic.SeedWork
+﻿using MediatR;
+
+namespace CustomerManagement.Logic.SeedWork
 {
-    public interface IDomainEvent
+    public interface IDomainEvent : INotification
     {
     }
 }

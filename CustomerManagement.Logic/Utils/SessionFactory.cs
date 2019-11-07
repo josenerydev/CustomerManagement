@@ -16,9 +16,9 @@ namespace CustomerManagement.Logic.Utils
     {
         private readonly ISessionFactory factory;
 
-        public SessionFactory(string connectionString)
+        public SessionFactory(string connectionString, EventListener eventListener)
         {
-            factory = BuildSessionFactory(connectionString);
+            factory = BuildSessionFactory(connectionString, eventListener);
         }
 
         internal  ISession OpenSession()
@@ -27,7 +27,7 @@ namespace CustomerManagement.Logic.Utils
         }
         
 
-        public static ISessionFactory BuildSessionFactory(string connectionString)
+        public static ISessionFactory BuildSessionFactory(string connectionString, EventListener eventListener)
         {
             FluentConfiguration configuration = Fluently.Configure()
                 .Database(MsSqlConfiguration.MsSql2012.ConnectionString(connectionString))
@@ -42,14 +42,14 @@ namespace CustomerManagement.Logic.Utils
                 )
                 .ExposeConfiguration(x =>
                 {
-                    x.EventListeners.PostCommitUpdateEventListeners =
-                        new IPostUpdateEventListener[] { new EventListener() };
+                    x.EventListeners.PostCommitUpdateEventListeners = 
+                        new IPostUpdateEventListener[] { eventListener };
                     x.EventListeners.PostCommitInsertEventListeners =
-                        new IPostInsertEventListener[] { new EventListener() };
+                        new IPostInsertEventListener[] { eventListener };
                     x.EventListeners.PostCommitDeleteEventListeners =
-                        new IPostDeleteEventListener[] { new EventListener() };
+                        new IPostDeleteEventListener[] { eventListener };
                     x.EventListeners.PostCollectionUpdateEventListeners =
-                        new IPostCollectionUpdateEventListener[] { new EventListener() };
+                        new IPostCollectionUpdateEventListener[] { eventListener };
                 });
 
             return configuration.BuildSessionFactory();

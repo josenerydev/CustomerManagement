@@ -1,20 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 using CustomerManagement.Logic.Model;
 using CustomerManagement.Logic.SeedWork;
 using CustomerManagement.Logic.Utils;
+
 using MediatR;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+
+using System.Reflection;
 
 namespace CustomerManagement.Api.Utils
 {
@@ -31,9 +27,10 @@ namespace CustomerManagement.Api.Utils
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddMediatR(Assembly.GetAssembly(typeof(AggregateRoot)));
 
-            services.AddSingleton(new SessionFactory(Configuration["ConnectionString"]));
+            services.AddSingleton(ctx => new EventListener(ctx.GetRequiredService<IMediator>()));
+            services.AddSingleton(ctx => new SessionFactory(Configuration["ConnectionString"], ctx.GetRequiredService<EventListener>()));
             services.AddScoped<UnitOfWork>();
             services.AddTransient<CustomerRepository>();
             services.AddTransient<IndustryRepository>();

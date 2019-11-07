@@ -5,10 +5,10 @@ namespace CustomerManagement.Logic.SeedWork
 {
     public abstract class AggregateRoot : Entity
     {
-        private readonly List<IRequest> _domainEvents = new List<IRequest>();
-        public virtual IReadOnlyList<IRequest> DomainEvents => _domainEvents;
+        private readonly List<INotification> _domainEvents = new List<INotification>();
+        public virtual IReadOnlyList<INotification> DomainEvents => _domainEvents;
 
-        protected virtual void AddDomainEvent(IRequest newEvent)
+        protected virtual void AddDomainEvent(INotification newEvent)
         {
             _domainEvents.Add(newEvent);
         }

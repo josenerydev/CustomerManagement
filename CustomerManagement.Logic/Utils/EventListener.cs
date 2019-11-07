@@ -8,12 +8,19 @@ using System.Threading.Tasks;
 
 namespace CustomerManagement.Logic.Utils
 {
-    internal class EventListener :
+    public class EventListener :
         IPostInsertEventListener,
         IPostDeleteEventListener,
         IPostUpdateEventListener,
         IPostCollectionUpdateEventListener
     {
+
+        private IMediator _mediator;
+        public EventListener(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
         public void OnPostDelete(PostDeleteEvent @event)
         {
             DispatchEvents(@event.Entity as AggregateRoot);
@@ -59,9 +66,9 @@ namespace CustomerManagement.Logic.Utils
             if (aggregateRoot == null)
                 return;
 
-            foreach (IRequest domainEvent in aggregateRoot.DomainEvents)
+            foreach (IDomainEvent domainEvent in aggregateRoot.DomainEvents)
             {
-                //DomainEvents.Dispatch(domainEvent);
+                _mediator.Publish(domainEvent);
             }
 
             aggregateRoot.ClearEvents();
