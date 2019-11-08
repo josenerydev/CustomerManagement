@@ -89,32 +89,57 @@ namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggreg
         {
         }
 
-        public Aluno(UrlFoto urlFoto,
-            Nome nome,
-            Matricula matricula,
-            Cep cep,
-            Cidade cidade,
-            UF uf,
-            Logradouro logradouro,
-            Numero numero,
-            Complemento complemento,
-            Bairro bairro,
-            Telefone telefonePrincipal,
-            Maybe<Telefone> telefoneSecundario,
-            Cpf cpf,
-            RG rg,
-            Sexo sexo,
-            EstadoCivil estadoCivil,
-            DataNascimento dataNascimento,
-            Naturalidade naturalidade,
-            Nacionalidade nacionalidade,
-            Carreira carreira,
-            Email emailPrincipal,
-            Maybe<Email> emailSecundario,
-            LinguaEstrangeira linguaEstrangeira)
+        public Aluno
+            (
+                UrlFoto urlFoto,
+                Nome nome,
+                Matricula matricula,
+                Cep cep,
+                Cidade cidade,
+                UF uf,
+                Logradouro logradouro,
+                Numero numero,
+                Complemento complemento,
+                Bairro bairro,
+                Telefone telefonePrincipal,
+                Maybe<Telefone> telefoneSecundario,
+                Cpf cpf,
+                RG rg,
+                Sexo sexo,
+                EstadoCivil estadoCivil,
+                DataNascimento dataNascimento,
+                Naturalidade naturalidade,
+                Nacionalidade nacionalidade,
+                Carreira carreira,
+                Email emailPrincipal,
+                Maybe<Email> emailSecundario,
+                LinguaEstrangeira linguaEstrangeira
+            )
             : this()
         {
-
+            _urlFoto = urlFoto;
+            _nome = nome;
+            _matricula = matricula;
+            _cep = cep;
+            _cidade = cidade;
+            UF = uf;
+            _logradouro = logradouro;
+            _numero = numero;
+            _complemento = complemento;
+            _bairro = bairro;
+            _telefonePrincipal = telefonePrincipal;
+            TelefoneSecundario = telefoneSecundario;
+            _cpf = cpf;
+            _rg = rg;
+            Sexo = sexo;
+            EstadoCivil = estadoCivil;
+            _dataNascimento = dataNascimento;
+            _naturalidade = naturalidade;
+            _nacionalidade = nacionalidade;
+            Carreira = carreira;
+            _emailPrincipal = emailPrincipal;
+            EmailSecundario = emailSecundario;
+            LinguaEstrangeira = linguaEstrangeira;
         }
     }
 }
