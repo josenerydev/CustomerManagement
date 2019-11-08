@@ -10,18 +10,20 @@ namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggreg
     {
         public string Foto { get; set; }
         public Nome Nome { get; set; }
-        public int Codigo { get; set; }
+
+        // No lugar de código
+        public int Matricula { get; set; }
         public Cep Cep { get; set; }
         public Cidade Cidade { get; set; }
-        public string UF { get; set; }
-        public string Logradouro { get; set; }
-        public string Bairro { get; set; }
+        public UF UF { get; set; }
+        public Logradouro Logradouro { get; set; }
+        public Bairro Bairro { get; set; }
         public string Telefone1 { get; set; }
         public string Telefone2 { get; set; }
 
         // Dados Adicionais
 
-        public string CPF { get; set; }
+        public Cpf CPF { get; set; }
 
         public string RG { get; set; }
 
