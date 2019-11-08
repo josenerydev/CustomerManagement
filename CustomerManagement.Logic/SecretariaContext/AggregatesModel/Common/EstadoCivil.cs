@@ -4,7 +4,7 @@ using CustomerManagement.Logic.SeedWork;
 
 namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.Common
 {
-    public class EstadoCivil : AggregateRoot
+    public class EstadoCivil : Enumeration
     {
         public static readonly EstadoCivil Solteiro = new EstadoCivil(1, "Solteiro(a)");
         public static readonly EstadoCivil Casado = new EstadoCivil(2, "Casado(a)");
@@ -12,39 +12,37 @@ namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.Common
         public static readonly EstadoCivil Viuvo = new EstadoCivil(4, "Viúvo(a)");
         public static readonly EstadoCivil Separado = new EstadoCivil(5, "Separado(a)");
 
-        public virtual string Value { get; protected set; }
-
         protected EstadoCivil()
         {
         }
 
-        private EstadoCivil(int id, string value)
+        private EstadoCivil(int id, string name)
         {
             Id = id;
-            Value = value;
+            Name = name;
         }
 
-        public static Result<EstadoCivil> Get(Maybe<string> value)
+        public static Result<EstadoCivil> Get(Maybe<string> name)
         {
-            if (value.HasNoValue)
+            if (name.HasNoValue)
                 return Result.Failure<EstadoCivil>("Estado civil não especifícado");
 
-            if (value.Value == Solteiro.Value)
+            if (name.Value == Solteiro.Name)
                 return Result.Ok(Solteiro);
 
-            if (value.Value == Casado.Value)
+            if (name.Value == Casado.Name)
                 return Result.Ok(Casado);
 
-            if (value.Value == Divorciado.Value)
+            if (name.Value == Divorciado.Name)
                 return Result.Ok(Divorciado);
 
-            if (value.Value == Viuvo.Value)
+            if (name.Value == Viuvo.Name)
                 return Result.Ok(Viuvo);
 
-            if (value.Value == Separado.Value)
+            if (name.Value == Separado.Name)
                 return Result.Ok(Separado);
 
-            return Result.Failure<EstadoCivil>("Estado civil é inválido: " + value);
+            return Result.Failure<EstadoCivil>("Estado civil é inválido: " + name);
         }
     }
 }
