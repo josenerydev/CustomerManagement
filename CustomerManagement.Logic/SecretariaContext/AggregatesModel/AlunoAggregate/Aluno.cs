@@ -1,50 +1,120 @@
-﻿using CustomerManagement.Logic.SecretariaContext.AggregatesModel.Common;
+﻿using CSharpFunctionalExtensions;
+
+using CustomerManagement.Logic.SecretariaContext.AggregatesModel.Common;
 using CustomerManagement.Logic.SeedWork;
-using System;
+
 using System.Collections.Generic;
-using System.Text;
 
 namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggregate
 {
     public class Aluno : AggregateRoot
     {
-        public string Foto { get; set; }
-        public Nome Nome { get; set; }
+        private readonly string _urlFoto;
+        public virtual UrlFoto UrlFoto => (UrlFoto)_urlFoto;
 
-        // No lugar de código
-        public int Matricula { get; set; }
-        public Cep Cep { get; set; }
-        public Cidade Cidade { get; set; }
-        public UF UF { get; set; }
-        public Logradouro Logradouro { get; set; }
-        public Bairro Bairro { get; set; }
-        public Telefone Telefone1 { get; set; }
-        public Telefone Telefone2 { get; set; }
+        private readonly string _nome;
+        public virtual Nome Nome => (Nome)_nome;
 
-        // Dados Adicionais
+        private readonly string _matricula;
+        public virtual Matricula Matricula => (Matricula)_matricula;
 
-        public Cpf CPF { get; set; }
+        private readonly string _cep;
+        public virtual Cep Cep => (Cep)_cep;
 
-        public RG RG { get; set; }
+        private readonly string _cidade;
+        public virtual Cidade Cidade => (Cidade)_cidade;
 
-        public Sexo Sexo { get; set; }
-        // Masculino, Feminino, Outros
+        public virtual UF UF { get; protected set; }
 
-        public EstadoCivil EstadoCivil { get; set; }
-        // Casado, Divorciado, Solteiro
+        private readonly string _logradouro;
+        public virtual Logradouro Logradouro => (Logradouro)_logradouro;
 
-        public DataNascimento DataNascimento { get; set; }
+        private readonly string _numero;
+        public virtual Numero Numero => (Numero)_numero;
 
-        public string Naturalidade { get; set; }
-        public Nacionalidade Nacionalidade { get; set; }
+        private readonly string _complemento;
+        public virtual Complemento Complemento => (Complemento)_complemento;
 
-        public string Carreira { get; set; }
-        public Email Email { get; set; }
-        public LinguaEstrangeira LinguaEstrangeira { get; set; }
-        // Inglês e espanhol
+        private readonly string _bairro;
+        public virtual Bairro Bairro => (Bairro)_bairro;
 
-        public string ColegioAnterior { get; set; }
-        // Nome; Cidade; UF
+        private readonly string _telefonePrincipal;
+        public virtual Telefone TelefonePrincipal => (Telefone)_telefonePrincipal;
 
+        private string _telefoneSecundario;
+        public virtual Maybe<Telefone> TelefoneSecundario
+        {
+            get => _telefoneSecundario == null ? null : (Telefone)_telefoneSecundario;
+            protected set => _telefoneSecundario = value.Unwrap(x => x.Value);
+        }
+
+        private readonly string _cpf;
+        public virtual Cpf CPF => (Cpf)_cpf;
+
+        private readonly string _rg;
+        public virtual RG RG => (RG)_rg;
+
+        public virtual Sexo Sexo { get; protected set; }
+
+        public virtual EstadoCivil EstadoCivil { get; protected set; }
+
+        private readonly string _dataNascimento;
+        public virtual DataNascimento DataNascimento => (DataNascimento)_dataNascimento;
+
+        public virtual IList<Responsavel> Responsaveis { get; protected set; }
+
+        private readonly string _naturalidade;
+        public virtual Naturalidade Naturalidade => (Naturalidade)_naturalidade;
+
+        private readonly string _nacionalidade;
+        public virtual Nacionalidade Nacionalidade => (Nacionalidade)_nacionalidade;
+
+        public virtual Carreira Carreira { get; protected set; }
+
+        private readonly string _emailPrincipal;
+        public virtual Email EmailPrincipal => (Email)_emailPrincipal;
+
+        private string _emailSecundario;
+        public virtual Maybe<Email> EmailSecundario
+        {
+            get => _emailSecundario == null ? null : (Email)_emailSecundario;
+            protected set => _emailSecundario = value.Unwrap(x => x.Value);
+        }
+
+        public virtual LinguaEstrangeira LinguaEstrangeira { get; protected set; }
+
+        public virtual IList<Colegio> ColegiosAnteriores { get; protected set; }
+
+        protected Aluno()
+        {
+        }
+
+        public Aluno(UrlFoto urlFoto,
+            Nome nome,
+            Matricula matricula,
+            Cep cep,
+            Cidade cidade,
+            UF uf,
+            Logradouro logradouro,
+            Numero numero,
+            Complemento complemento,
+            Bairro bairro,
+            Telefone telefonePrincipal,
+            Maybe<Telefone> telefoneSecundario,
+            Cpf cpf,
+            RG rg,
+            Sexo sexo,
+            EstadoCivil estadoCivil,
+            DataNascimento dataNascimento,
+            Naturalidade naturalidade,
+            Nacionalidade nacionalidade,
+            Carreira carreira,
+            Email emailPrincipal,
+            Maybe<Email> emailSecundario,
+            LinguaEstrangeira linguaEstrangeira)
+            : this()
+        {
+
+        }
     }
 }

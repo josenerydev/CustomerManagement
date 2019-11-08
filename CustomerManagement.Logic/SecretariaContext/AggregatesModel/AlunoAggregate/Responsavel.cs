@@ -1,26 +1,28 @@
-﻿using System;
+﻿using CustomerManagement.Logic.SecretariaContext.AggregatesModel.Common;
+using CustomerManagement.Logic.SeedWork;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggregate
 {
-    public class Responsavel
+    public class Responsavel : Entity
     {
-        public string Nome { get; set; }
-        public string Cep { get; set; }
-        public string Cidade { get; set; }
-        public string Uf { get; set; }
-        public string Logradouro { get; set; }
-        public string Numero { get; set; }
-        public string Complemento { get; set; }
-        public string Bairro { get; set; }
-        public string Telefone1 { get; set; }
-        public string Telefone2 { get; set; }
-        public string Cpf { get; set; }
-        public string Rg { get; set; }
-        public string Profissão { get; set; }
-        public string Sexo { get; set; }
-        public string Email { get; set; }
+        public Nome Nome { get; set; }
+        public Cep Cep { get; set; }
+        public Cidade Cidade { get; set; }
+        public UF UF { get; set; }
+        public Logradouro Logradouro { get; set; }
+        public Numero Numero { get; set; }
+        public Complemento Complemento { get; set; }
+        public Bairro Bairro { get; set; }
+        public Telefone Telefone1 { get; set; }
+        public Telefone Telefone2 { get; set; }
+        public Cpf Cpf { get; set; }
+        public RG Rg { get; set; }
+        public Profissao Profissão { get; set; }
+        public Sexo Sexo { get; set; }
+        public Email Email { get; set; }
 
         public bool ResponsavelFinanceiro { get; set; }
         public bool ResponsavelPedagogico { get; set; }
