@@ -19,7 +19,7 @@ namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.Common
             return cpfOrNothing.ToResult("O CPF não deve estar vazio")
                 .Map(cpf => cpf.Trim())
                 .Ensure(cpf => cpf != string.Empty, "O CPF não deve estar vazio")
-                .Ensure(cep => Regex.IsMatch(cep, @"^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"), "CPF inválido")
+                .Ensure(cpf => Regex.IsMatch(cpf, @"^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"), "CPF inválido")
                 .Map(cpf => new Cpf(cpf));
         }
 

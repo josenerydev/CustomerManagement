@@ -18,14 +18,14 @@ namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggreg
         public UF UF { get; set; }
         public Logradouro Logradouro { get; set; }
         public Bairro Bairro { get; set; }
-        public string Telefone1 { get; set; }
-        public string Telefone2 { get; set; }
+        public Telefone Telefone1 { get; set; }
+        public Telefone Telefone2 { get; set; }
 
         // Dados Adicionais
 
         public Cpf CPF { get; set; }
 
-        public string RG { get; set; }
+        public RG RG { get; set; }
 
         public string Sexo { get; set; }
         // Masculino, Feminino, Outros
@@ -35,13 +35,13 @@ namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggreg
 
         public DataNascimento DataNascimento { get; set; }
 
-        public string NaturalDe { get; set; }
+        public string Naturalidade { get; set; }
         public string Nacionalidade { get; set; }
 
         public string Carreira { get; set; }
         public Email Email { get; set; }
-        public string LinguaEstrangeira { get; set; }
-        // Inglês e Espanhou
+        public LinguaEstrangeira LinguaEstrangeira { get; set; }
+        // Inglês e espanhol
 
         public string ColegioAnterior { get; set; }
         // Nome; Cidade; UF
