@@ -6,7 +6,7 @@ using System;
 using System.Data;
 using System.Linq;
 
-namespace CustomerManagement.Logic.Utils
+namespace CustomerManagement.Logic.SeedWork
 {
     public class UnitOfWork : IDisposable
     {

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.Common
+namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggregate
 {
     public class DataNascimento : ValueObject
     {

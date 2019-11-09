@@ -8,9 +8,10 @@ using FluentNHibernate.Mapping;
 
 using NHibernate;
 using NHibernate.Event;
+
 using System.Reflection;
 
-namespace CustomerManagement.Logic.Utils
+namespace CustomerManagement.Logic.SeedWork
 {
     public  class SessionFactory
     {

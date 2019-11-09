@@ -1,5 +1,4 @@
 ﻿using CustomerManagement.Logic.SeedWork;
-using CustomerManagement.Logic.Utils;
 
 using System.Linq;
 

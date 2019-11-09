@@ -1,9 +1,9 @@
 ﻿using CSharpFunctionalExtensions;
 
-using CustomerManagement.Logic.SecretariaContext.AggregatesModel.Common;
 using CustomerManagement.Logic.SeedWork;
 
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggregate
 {
@@ -61,7 +61,8 @@ namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggreg
         private readonly string _dataNascimento;
         public virtual DataNascimento DataNascimento => (DataNascimento)_dataNascimento;
 
-        public virtual IList<Responsavel> Responsaveis { get; protected set; }
+        private readonly IList<Responsavel> _responsaveis;
+        public virtual IReadOnlyList<Responsavel> Responsaveis => _responsaveis.ToList();
 
         private readonly string _naturalidade;
         public virtual Naturalidade Naturalidade => (Naturalidade)_naturalidade;
@@ -83,7 +84,8 @@ namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggreg
 
         public virtual LinguaEstrangeira LinguaEstrangeira { get; protected set; }
 
-        public virtual IList<Colegio> ColegiosAnteriores { get; protected set; }
+        private readonly IList<Colegio> _colegios;
+        public virtual IReadOnlyList<Colegio> ColegiosAnteriores => _colegios.ToList();
 
         protected Aluno()
         {

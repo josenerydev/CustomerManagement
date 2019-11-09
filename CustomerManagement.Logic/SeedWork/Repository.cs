@@ -1,7 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
 
-using CustomerManagement.Logic.Utils;
-
 namespace CustomerManagement.Logic.SeedWork
 {
     public class Repository<T>

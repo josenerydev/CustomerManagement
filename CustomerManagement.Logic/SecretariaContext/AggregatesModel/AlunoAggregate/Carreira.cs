@@ -1,8 +1,4 @@
-﻿using CustomerManagement.Logic.SecretariaContext.AggregatesModel.Common;
-using CustomerManagement.Logic.SeedWork;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CustomerManagement.Logic.SeedWork;
 
 namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggregate
 {

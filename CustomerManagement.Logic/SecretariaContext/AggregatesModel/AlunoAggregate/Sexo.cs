@@ -2,7 +2,7 @@
 
 using CustomerManagement.Logic.SeedWork;
 
-namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.Common
+namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggregate
 {
     public class Sexo : Enumeration
     {

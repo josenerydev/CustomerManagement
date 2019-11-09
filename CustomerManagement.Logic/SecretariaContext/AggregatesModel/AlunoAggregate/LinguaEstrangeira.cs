@@ -1,8 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
+
 using CustomerManagement.Logic.SeedWork;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggregate
 {

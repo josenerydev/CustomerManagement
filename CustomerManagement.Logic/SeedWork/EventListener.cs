@@ -1,12 +1,12 @@
-﻿using CustomerManagement.Logic.SeedWork;
-using MediatR;
+﻿using MediatR;
+
 using NHibernate.Event;
 
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CustomerManagement.Logic.Utils
+namespace CustomerManagement.Logic.SeedWork
 {
     public class EventListener :
         IPostInsertEventListener,

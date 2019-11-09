@@ -2,8 +2,7 @@
 
 using CustomerManagement.Api.Utils;
 using CustomerManagement.Logic.Model;
-using CustomerManagement.Logic.Utils;
-
+using CustomerManagement.Logic.SeedWork;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CustomerManagement.Api.Customers

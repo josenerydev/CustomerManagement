@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 
-namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.Common
+namespace CustomerManagement.Logic.SecretariaContext.AggregatesModel.AlunoAggregate
 {
     public class Logradouro : ValueObject
     {

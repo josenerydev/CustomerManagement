@@ -1,6 +1,5 @@
 using CustomerManagement.Logic.Model;
 using CustomerManagement.Logic.SeedWork;
-using CustomerManagement.Logic.Utils;
 
 using MediatR;
 

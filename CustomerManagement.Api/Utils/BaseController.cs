@@ -1,4 +1,5 @@
-﻿using CustomerManagement.Logic.Utils;
+﻿
+using CustomerManagement.Logic.SeedWork;
 
 using Microsoft.AspNetCore.Mvc;
 
